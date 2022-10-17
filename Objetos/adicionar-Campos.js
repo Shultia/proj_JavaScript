@@ -4,3 +4,7 @@ const cliente = {
     cpf : "343433232",
     email: "thiago@gmail.com"
 }
+
+cliente.fone = "11964215535"
+
+console.log(cliente)
