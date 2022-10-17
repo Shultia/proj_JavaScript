@@ -8,3 +8,7 @@ const cliente = {
 cliente.fone = "11964215535"
 
 console.log(cliente)
+
+cliente.fone = "119643232"
+
+console.log(cliente)
