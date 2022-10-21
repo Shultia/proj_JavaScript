@@ -12,7 +12,7 @@ function insertionSort(lista) {
       lista[index - 1] = itemAtual
 
       index = index-2       
-      //necessário subtrair dois do index para refazer a análise anterior, pois ao executar uma vez o laço, o for está incrementando +1.
+      
     }
   }
   console.log(lista);
