@@ -8,7 +8,7 @@ function Cliente (nome,cpf,email,saldo){
     }
 }
 
-const thiago = new Cliente("Thiago","48302077879","thiago@gmail.com",40) 
+const thiago = new Cliente("Thiago","12830207879","thiago@gmail.com",40) 
 
 
 
