@@ -15,7 +15,7 @@ function clientePoupanca(nome,cpf,email,saldo,saldoP){
 
 
 
-const thiago = new clientePoupanca("thiago","48302072323","thiago@gmail.com",130,400)
+const thiago = new clientePoupanca("thiago","431072323","thiago@gmail.com",130,400)
 
 clientePoupanca.prototype.depositarP = function(valor){
     this.saldoP += valor
