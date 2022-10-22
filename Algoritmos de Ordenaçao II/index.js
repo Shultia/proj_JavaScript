@@ -26,4 +26,16 @@
         return listaFinal;
     }
 
+    while(posicaoAtualLista1 < lista1.length) {
+        listaFinal[atual] = lista1[produtoAtualLista1];
+        posicaoAtualLista1++
+        atual++
+    }
+
+    while(posicaoAtualLista2 < lista2.length) {
+        listaFinal[atual] = lista2[produtoAtualLista2];
+        posicaoAtualLista2++
+        atual++
+    }
+
 console.log(JuntaListas(edGalho,edFolha))
