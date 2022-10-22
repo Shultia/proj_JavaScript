@@ -1,41 +1,41 @@
-const listaLivros = require('./arrays');
-const ListaLivros = require('./arrays')
+const listaLivros = require('./array');
 
-function mergeSort(array){
-    if(array.length > 1 ){
-        const meio =  Math.floor(array.length / 2);
-        const part1 = mergeSort(array.slice(0,meio));
-        const part2 = mergeSort(array.slice(meio, array.length));
-        array = ordena(part1,part2);
-    }
+function mergeSort(array, nivelAninhamento = 0) {
 
-    return array;
+  console.log(`nível de aninhamento: ${nivelAninhamento}`)
+  console.log(array)
+
+  if(array.length > 1) {
+    const meio = Math.floor(array.length / 2);
+    const parte1 = mergeSort(array.slice(0, meio), nivelAninhamento + 1);
+    const parte2 = mergeSort(array.slice(meio, array.length), nivelAninhamento + 1);
+    array = ordena(parte1, parte2);
+  }
+
+  return array;
 }
 
+function ordena(parte1, parte2) {
+  let posicaoAtualParte1 = 0 
+  let posicaoAtualParte2 = 0
+  const resultado = []
 
-function ordena(part1, part2) {
-    let posicaoAtual1 = 0;
-    let posicaoAtual2 = 0;
-    
-    const resultado = []
-    
-    while(posicaoAtual1 < part1.length && posicaoAtual2 < part2.length){
-        let produtoAtual1 = part1[posicaoAtual1];
-        let produtoAtual2 = part2[posicaoAtual2];
+  while (posicaoAtualParte1 < parte1.length && posicaoAtualParte2 < parte2.length) {
+    let produtoAtualParte1 = parte1[posicaoAtualParte1]
+    let produtoAtualParte2 = parte2[posicaoAtualParte2]
 
-        if(produtoAtual1.preco < produtoAtual2.preco){
-            resultado.push(produtoAtual1);
-            posicaoAtual1++
-        } else {
-            resultado.push(produtoAtual2);
-            posicaoAtual2++
-        }
+    if (produtoAtualParte1.preco < produtoAtualParte2.preco) {
+      resultado.push(produtoAtualParte1)
+      posicaoAtualParte1++
+    } else {
+      resultado.push(produtoAtualParte2)
+      posicaoAtualParte2++
     }
+  }
 
-    return resultado.concat(posicaoAtual1 < part1.length 
-        ?  part1.slice(posicaoAtual1) 
-        : part2.slice(posicaoAtual2))
+  return resultado.concat(posicaoAtualParte1 < parte1.length
+    ? parte1.slice(posicaoAtualParte1)
+    : parte2.slice(posicaoAtualParte2))
 }
-    
 
 console.log(mergeSort(listaLivros));
