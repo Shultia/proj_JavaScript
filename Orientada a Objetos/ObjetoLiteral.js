@@ -5,8 +5,19 @@ const user = {
     role: 'admin',
     ativo: true,
     exibirInfos: function(){
-        console.log(this.email,this.nome)
+        console.log(this.nome,this.email)
     }
 }
 
-//herança de prototipo
+// user.exibirInfos()
+// const exibir = user.exibirInfos 
+// exibir()
+
+const exibir = function(){
+    console.log(this.nome)
+}
+
+const exibirNome = exibir.bind(user)
+
+exibirNome()
+exibir()
