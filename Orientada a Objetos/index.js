@@ -9,4 +9,5 @@ import Admin from "./Admin.js";
 
 const novoAdmin = new Admin ('Thiagoo','tg@gmail.com','29/02/2004')
 
-console.log(novoAdmin.nome)
+novoAdmin.nome = ''
+console.log(novoAdmin.exibirInfos())

@@ -32,9 +32,17 @@ export default class User {
         return this.ativo
     }
 
+    set nome(NovoNome) {
+        if (NovoNome === ''){
+            throw new Error('Formato invalido')
+        }
+        this.#nome = NovoNome
+    }
+    
+
+
     exibirInfos(){
-        const objUser = this.#montaObjetosUser()
-        return `${objUser.nome}, ${objUser.email}`
+        return `${this.nome}, ${this.email}, ${this.nascimento},${this.role},${this.#ativo}`
     }
 }
 
