@@ -9,6 +9,10 @@ import User from "./User.js";
         return `${this.nome}` 
     }
 
+    exibirInfos(){
+        return `${this.nome}, ${this.email}, ${this.nascimento}`
+    }
+
     criarCurso(nomeDoCurso,vagas){
         return `Curso de ${nomeDoCurso} criado com ${vagas} Vagas`
     }
