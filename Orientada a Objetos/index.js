@@ -4,6 +4,12 @@ import Admin from "./Admin.js";
 
 
 const novoUser = new User('THIAGO', 't@gmail.com','28/02/2004')
+
 console.log(novoUser.exibirInfos())
 
 
+const novoAdmin = new Admin ('Thigoo','tg@gmail.com','29/02/2004')
+
+console.log(novoAdmin.exibirInfos())
+
+console.log(novoAdmin.nomeAdmin)
