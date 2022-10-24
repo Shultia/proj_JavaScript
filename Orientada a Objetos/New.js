@@ -36,5 +36,5 @@ const user = {
 
 const NovoUser = Object.create(user)
 NovoUser.init('thiago','t@gmail.com')
-console.log(NovoUser.exibirInfos())
+
 // console.log(user.isPrototypeOf(NovoUser))
