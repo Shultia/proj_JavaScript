@@ -7,6 +7,7 @@ export class ContaCorrente extends Conta {
         ContaCorrente.numeroDeContas += 1;
     }
 
+    //sobrescrevendo o comportamento de sacar
     sacar(valor){
         let taxa = 1.1;
         return super.sacar(valor,taxa);
