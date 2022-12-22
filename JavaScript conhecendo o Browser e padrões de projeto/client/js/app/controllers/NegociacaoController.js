@@ -9,9 +9,12 @@ class NegociacaoController {
     }
     adiciona(event){
         event.preventDefault();
+        
+        //string
+        let data  = new Date(this.inputData.value.replace(/-/g, ','));
+
+        console.log(data)
     
-        console.log(typeof(this.inputData.value))
-        console.log(this.inputData.value)
       
     }
 }
