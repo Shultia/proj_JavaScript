@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <title>Negociações</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     
 </head>
 <body class="container">
     
     <h1 class="text-center">Negociações</h1>
     
-    <form class="form">
+    <form class="form" onsubmit="negociacaoController.adiciona(event)">
         
         <div class="form-group">
             <label for="data">Data</label>
@@ -59,15 +59,9 @@
         </tfoot>
     </table>
        <script src="js/app/models/Negociacao.js"></script>
-       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-        <script>
-            var n1 = new Negociacao(new Date,5,800);
-            
-            console.log(n1.data)
-            console.log(n1.quantidade)
-            console.log(n1.valor)
-            console.log(n1.volume)
-
-        </script>
+       <script src="./js/app/controllers/NegociacaoController.js"></script>
+       <script>
+            let negociacaoController = new NegociacaoController();
+       </script>
 </body>
 </html>
