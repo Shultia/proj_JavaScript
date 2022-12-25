@@ -12,11 +12,13 @@ class NegociacaoController {
         
         //string
         let data  = new Date(...this.inputData.value.split('-')
-        .map(function(item,indice){
-            return item - indice % 2 
-        }));
-        console.log(data)
-    
-      
+        .map((item,indice) => item - indice % 2 ));
+
+        let negociacao = new Negociacao(
+            data,
+            this.inputQuantidade.value,
+            this.inputValor.value
+        );
+        console.log(negociacao);
     }
 }
