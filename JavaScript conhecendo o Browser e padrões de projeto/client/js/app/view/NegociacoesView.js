@@ -19,19 +19,20 @@ class NegociacaoView   {
         
         <tbody>
 
-        ${model.negociacoes.map((n) => {
-            return `
+        ${model.negociacoes.map((n) =>  `
                 <tr>
                     <td>${DateHelper.dataParaTexto(n.data)}</td>
                     <td>${n.quantidade}</td>  
                     <td>${n.valor}</td>  
                     <td>${n.volume}</td>  
-                </tr>
-            `
-        }).join('')}
+                </tr> `
+        ).join('')}
         </tbody>
         
-        <tfoot>
+        <tfoot> 
+            <td colspan="3"></td>
+            <td>${model.negociacoes.reduce((total,n) => total + n.volume,0.0)
+        }</td>
         </tfoot>
         </table>
         `;
