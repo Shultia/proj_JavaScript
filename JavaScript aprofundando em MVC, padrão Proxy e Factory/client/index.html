@@ -15,7 +15,7 @@
 
     <form class="form" onsubmit="negociacaoController.adiciona(event)">
         
-        <div class="form-group">
+        <div class="form-group">    
             <label for="data">Data</label>
             <input type="date" id="data" class="form-control" required autofocus/>        
         </div>    
@@ -58,6 +58,17 @@
        
        <script>
             let negociacaoController = new NegociacaoController();
+       </script>
+       <script>
+        let negociacao = new Proxy(new Negociacao(new Date(), 1,100),{
+            set: function(target,prop,value,receiver){
+                console.log(`valor anterior: ${target[prop]} novo valor: ${value}`);
+                return Reflect.set(target,prop,value,receiver);
+            }
+        });
+
+        negociacao._quantidade = 10;
+        negociacao._valor  = 100;
        </script>
 
 
