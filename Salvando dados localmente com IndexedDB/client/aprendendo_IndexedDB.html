@@ -6,17 +6,39 @@
 </head>
 <body>
     <script>
-        var openRequest = window.indexedDB.open('negociador',1);
+        
+        //IDB DataBase
+        var connection;
+      
+        var openRequest = window.indexedDB.open('negociador',2);
+   
 
         openRequest.onupgradeneeded = (e) => {
+
             console.log('Cria ou altera um banco ja existente');
+
+            var minhaConnection = e.target.result;
+            minhaConnection.createObjectStore('negociacoes');
         }
+
+
+
         openRequest.onsuccess = (e) => {
+
             console.log('Conexao obtida com sucesso')
+
+            connection = e.target.result;
         }
+
+
+
         openRequest.onerror = (e) => {
+
             console.log(e.target.error);
         }
+
+
+
     </script>
 </body>
 </html>
