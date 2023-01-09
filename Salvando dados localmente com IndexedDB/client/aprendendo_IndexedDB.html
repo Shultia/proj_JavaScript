@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>indexedDB</title>
+</head>
+<body>
+    <script>
+        var openRequest = window.indexedDB.open('negociador',1);
+
+        openRequest.onupgradeneeded = (e) => {
+            console.log('Cria ou altera um banco ja existente');
+        }
+        openRequest.onsuccess = (e) => {
+            console.log('Conexao obtida com sucesso')
+        }
+        openRequest.onerror = (e) => {
+            console.log(e.target.error);
+        }
+    </script>
+</body>
+</html>
