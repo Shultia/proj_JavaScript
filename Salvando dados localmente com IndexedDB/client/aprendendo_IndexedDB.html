@@ -11,7 +11,7 @@
         //IDB DataBase
         var connection;
         
-        var openRequest = window.indexedDB.open('negociador',2  );
+        var openRequest = window.indexedDB.open('negociador',4);
         
         
         openRequest.onupgradeneeded = (e) => {
@@ -90,10 +90,29 @@
                 console.log(e.target.error.name);
             }
         }
+
+
+        ConecctionFactory 
+                .getConecction()
+                .then(connection => {
+                    // usa a conexao
+                })
+
+        ConecctionFactory
+        .getConecction()
+        .then(connection => {
+            // a conexao tem que ser a mesma utilizada anteriormente
+        })
+
+        /* 
+          getConnection vai ser um metodo estatico
+          getConnection vai retornar uma promise
+          nao importa o numero de vezes que eu chamar o metodo estatico, a conexao tem que ser a mesma
+          o programador nao pode chamar close diretamente, Ela pode ser atraves da propria instancia
+         */
         
         
-        
-        
+       
     </script>
 </body>
 </html>
